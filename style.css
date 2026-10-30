@@ -315,3 +315,316 @@ li{
     }
 
 }
+
+#favorito {
+    color: #333;
+    font-size: 25px;
+    transition: transform 0.2s, color 0.2s;
+}
+
+#favorito.ativo {
+    color: #d62839;
+}
+
+#favorito:active {
+    transform: scale(0.9);
+}
+
+
+/* ==============================
+   TELA EXCLUSIVA DE HORÁRIOS
+============================== */
+
+.tela-horarios {
+    display: none;
+    min-height: 100%;
+    padding: 82px 20px 35px;
+    background: #f7f5f5;
+    animation: entrarTela .3s ease;
+}
+
+.phone.horarios-abertos .topbar #favorito {
+    display: none;
+}
+
+.container.horarios-abertos .imagem,
+.container.horarios-abertos .conteudo {
+    display: none;
+}
+
+.container.horarios-abertos .tela-horarios {
+    display: block;
+}
+
+@keyframes entrarTela {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Cabeçalho */
+
+.horarios-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 25px;
+}
+
+.btn-voltar-horarios {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    border: 1px solid #eee2e4;
+    border-radius: 14px;
+    background: #fff;
+    color: #8f1020;
+    font-size: 24px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.btn-voltar-horarios:hover {
+    background: #fbeaec;
+    transform: translateX(-2px);
+}
+
+.subtitulo {
+    color: #b11226;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.horarios-header h1 {
+    margin: 4px 0;
+    font-size: 30px;
+    letter-spacing: -.8px;
+}
+
+.horarios-header p {
+    color: #777;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* Cartão de destaque */
+
+.horarios-destaque {
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+    margin-bottom: 27px;
+    border-radius: 23px;
+    background: linear-gradient(140deg, #8d1021, #b11226 65%, #c6293b);
+    color: #fff;
+    box-shadow: 0 12px 28px rgba(139, 16, 33, .2);
+}
+
+.horarios-destaque::after {
+    content: "";
+    position: absolute;
+    width: 145px;
+    height: 145px;
+    right: -55px;
+    bottom: -65px;
+    border: 1px solid rgba(255,255,255,.14);
+    border-radius: 50%;
+    box-shadow: 0 0 0 20px rgba(255,255,255,.04),
+                0 0 0 40px rgba(255,255,255,.03);
+    pointer-events: none;
+}
+
+.destaque-topo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 22px;
+}
+
+.icone-relogio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 14px;
+    background: rgba(255,255,255,.15);
+    font-size: 29px;
+}
+
+.badge-aberto {
+    padding: 7px 9px;
+    border: 1px solid rgba(255,255,255,.2);
+    border-radius: 20px;
+    background: rgba(255,255,255,.12);
+    font-size: 9px;
+    font-weight: 600;
+}
+
+.horarios-destaque h2 {
+    margin-bottom: 6px;
+    font-size: 20px;
+}
+
+.horarios-destaque > p {
+    margin-bottom: 20px;
+    color: rgba(255,255,255,.8);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.linha-destaque {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255,255,255,.2);
+}
+
+.linha-destaque span {
+    color: rgba(255,255,255,.8);
+    font-size: 12px;
+}
+
+.linha-destaque strong {
+    font-size: 19px;
+}
+
+/* Lista semanal */
+
+.lista-horarios > h2 {
+    color: #222;
+    font-size: 19px;
+    margin-bottom: 5px;
+}
+
+.descricao-horarios {
+    color: #888;
+    font-size: 12px;
+    margin-bottom: 16px;
+}
+
+.dia-horario {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 10px;
+    margin-bottom: 9px;
+    border: 1px solid #f0ebeb;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,.025);
+}
+
+.dia-icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    background: #fbeaec;
+    color: #a11122;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.dia-info {
+    display: flex;
+    flex: 1;
+    min-width: 0;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.dia-info strong {
+    color: #292929;
+    font-size: 12px;
+}
+
+.dia-info span {
+    color: #269b57;
+    font-size: 10px;
+}
+
+.hora {
+    color: #333;
+    font-size: 10px;
+    white-space: nowrap;
+}
+
+.dia-horario.fechado {
+    background: #f0eeee;
+    box-shadow: none;
+}
+
+.fechado .dia-icone {
+    background: #e4e1e1;
+    color: #777;
+}
+
+.fechado .dia-info span,
+.fechado .hora {
+    color: #888;
+}
+
+
+
+.aviso-horarios {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 14px;
+    margin: 18px 0;
+    border: 1px solid #f0e0c8;
+    border-radius: 15px;
+    background: #fff8ed;
+}
+
+.aviso-icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #f5e2c3;
+    color: #91601b;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.aviso-horarios p {
+    color: #765d3c;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+
+
+.tela-voltar {
+    margin-top: 3px;
+    margin-bottom: 15px;
+    background: #b11226;
+    box-shadow: 0 8px 18px rgba(177,18,38,.15);
+}
+
+.tela-voltar:hover {
+    background: #92101f;
+}
+
+@media (max-width: 420px) {
+    .tela-horarios {
+        padding: 75px 18px 30px;
+    }
+}
