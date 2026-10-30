@@ -1,20 +1,22 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Mais Delivery</title>
+    <title>Mais Delivery | Mercearia Leve Mais</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
 
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
@@ -25,15 +27,36 @@
 
         <div class="topbar">
 
-            <button class="icone voltarTopo">&#8592;</button>
+            <button
+                class="icone voltarTopo"
+                aria-label="Voltar"
+                title="Voltar"
+            >
+                &#8592;
+            </button>
+
+            <button
+                class="icone"
+                id="favorito"
+                aria-label="Adicionar Mercearia Leve Mais aos favoritos"
+                aria-pressed="false"
+                title="Adicionar aos favoritos"
+            >
+                ♡
+            </button>
 
         </div>
 
         <div class="container">
 
+
             <div class="imagem">
 
-                <img src="img/mercearia.png" alt="Mercearia" class="banner">
+                <img
+                    src="img/mercearia.png"
+                    alt="Mercearia Leve Mais"
+                    class="banner"
+                >
 
             </div>
 
@@ -41,14 +64,12 @@
 
                 <h1>Mercearia Leve Mais</h1>
 
+
                 <div class="cabecalho">
 
                     <div class="nota">
-
                         <span>⭐</span>
-
                         <strong>5,0</strong>
-
                     </div>
 
                     <p class="avaliacoes">
@@ -58,9 +79,7 @@
                 </div>
 
                 <div class="tempo">
-
                     <span>🚚 20 a 30 min</span>
-
                 </div>
 
                 <div class="info">
@@ -70,11 +89,8 @@
                         <div class="bolinha"></div>
 
                         <div>
-
                             <h3>Aberto</h3>
-
                             <p>Fecha às 20:30</p>
-
                         </div>
 
                     </div>
@@ -85,9 +101,15 @@
 
                     <h3>Entrega</h3>
 
-                    <p>Modalidade: <strong>Somente entrega</strong></p>
+                    <p>
+                        Modalidade:
+                        <strong>Somente entrega</strong>
+                    </p>
 
-                    <p>Taxa de entrega: <strong>R$ 3,00</strong></p>
+                    <p>
+                        Taxa de entrega:
+                        <strong>R$ 3,00</strong>
+                    </p>
 
                 </div>
 
@@ -95,33 +117,21 @@
 
                     <h3>Horário de funcionamento</h3>
 
-                    <p>Hoje: <strong>07:30 às 20:30</strong></p>
+                    <p>
+                        Hoje:
+                        <strong>07:30 às 20:30</strong>
+                    </p>
 
-                    <button id="btnHorario" onclick="mostrarHorario()">
-
+                    <button
+                        type="button"
+                        onclick="abrirHorarios()"
+                    >
                         Ver horários da semana
-
+                        <span class="seta-horario">→</span>
                     </button>
 
-                    <div id="horarios">
-
-                        <p>Segunda: 07:30 às 20:30</p>
-
-                        <p>Terça: 07:30 às 20:30</p>
-
-                        <p>Quarta: 07:30 às 20:30</p>
-
-                        <p>Quinta: 07:30 às 20:30</p>
-
-                        <p>Sexta: 07:30 às 20:30</p>
-
-                        <p>Sábado: 08:00 às 18:00</p>
-
-                        <p>Domingo: Fechado</p>
-
-                    </div>
-
                 </div>
+
 
                 <div class="info">
 
@@ -130,36 +140,236 @@
                     <h4>Pelo aplicativo</h4>
 
                     <ul>
-
                         <li>✔ PIX Online</li>
-
                     </ul>
 
                     <h4>Na entrega</h4>
 
                     <ul>
-
                         <li>✔ Cartão de Crédito</li>
-
                         <li>✔ Cartão de Débito</li>
-
                         <li>✔ Dinheiro</li>
-
                         <li>✔ PIX QR Code</li>
-
                     </ul>
 
                 </div>
 
-                <button class="voltar">
-
-                    ← Voltar para Produtos
-
+                <button
+                    type="button"
+                    class="voltar"
+                    onclick="voltarProdutos()"
+                >
+                    &#8592; Voltar para Produtos
                 </button>
 
             </div>
 
+
+            <section class="tela-horarios">
+
+                <header class="horarios-header">
+
+                    <button
+                        type="button"
+                        class="btn-voltar-horarios"
+                        onclick="fecharHorarios()"
+                        aria-label="Voltar para a mercearia"
+                    >
+                        &#8592;
+                    </button>
+
+                    <div>
+
+                        <h1>Horários</h1>
+
+                        <p>
+                            Confira quando estamos abertos.
+                        </p>
+
+                    </div>
+
+                </header>
+
+
+                <div class="horarios-destaque">
+
+                    <div class="destaque-topo">
+
+                        <div class="icone-relogio">
+                            ◷
+                        </div>
+
+                        <span class="badge-aberto">
+                            ● Funcionamento semanal
+                        </span>
+
+                    </div>
+
+                    <h2>Mercearia Leve Mais</h2>
+
+                    <p>
+                        Planeje suas compras com tranquilidade.
+                    </p>
+
+                    <div class="linha-destaque">
+
+                        <span>Segunda a sexta</span>
+
+                        <strong>07:30 – 20:30</strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="lista-horarios">
+
+                    <h2>Todos os dias</h2>
+
+                    <p class="descricao-horarios">
+                        Confira os horários de atendimento.
+                    </p>
+
+
+                    <div class="dia-horario">
+
+                        <div class="dia-icone">S</div>
+
+                        <div class="dia-info">
+                            <strong>Segunda-feira</strong>
+                            <span>Aberto</span>
+                        </div>
+
+                        <strong class="hora">
+                            07:30 – 20:30
+                        </strong>
+
+                    </div>
+
+
+                    <div class="dia-horario">
+
+                        <div class="dia-icone">T</div>
+
+                        <div class="dia-info">
+                            <strong>Terça-feira</strong>
+                            <span>Aberto</span>
+                        </div>
+
+                        <strong class="hora">
+                            07:30 – 20:30
+                        </strong>
+
+                    </div>
+
+
+
+                    <div class="dia-horario">
+
+                        <div class="dia-icone">Q</div>
+
+                        <div class="dia-info">
+                            <strong>Quarta-feira</strong>
+                            <span>Aberto</span>
+                        </div>
+
+                        <strong class="hora">
+                            07:30 – 20:30
+                        </strong>
+
+                    </div>
+
+
+                    <div class="dia-horario">
+
+                        <div class="dia-icone">Q</div>
+
+                        <div class="dia-info">
+                            <strong>Quinta-feira</strong>
+                            <span>Aberto</span>
+                        </div>
+
+                        <strong class="hora">
+                            07:30 – 20:30
+                        </strong>
+
+                    </div>
+
+
+                    <div class="dia-horario">
+
+                        <div class="dia-icone">S</div>
+
+                        <div class="dia-info">
+                            <strong>Sexta-feira</strong>
+                            <span>Aberto</span>
+                        </div>
+
+                        <strong class="hora">
+                            07:30 – 20:30
+                        </strong>
+
+                    </div>
+
+
+
+                    <div class="dia-horario">
+
+                        <div class="dia-icone">S</div>
+
+                        <div class="dia-info">
+                            <strong>Sábado</strong>
+                            <span>Horário especial</span>
+                        </div>
+
+                        <strong class="hora">
+                            08:00 – 18:00
+                        </strong>
+
+                    </div>
+
+
+                    <div class="dia-horario fechado">
+
+                        <div class="dia-icone">D</div>
+
+                        <div class="dia-info">
+                            <strong>Domingo</strong>
+                            <span>Não há atendimento</span>
+                        </div>
+
+                        <strong class="hora">
+                            Fechado
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="aviso-horarios">
+
+                    <span class="aviso-icone">i</span>
+
+                    <p>
+                        Os horários podem sofrer alterações
+                        em feriados e datas especiais.
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="voltar tela-voltar"
+                    onclick="fecharHorarios()"
+                >
+                    &#8592; Voltar para a mercearia
+                </button>
+
+            </section>
+
         </div>
+
 
         <div class="home-bar"></div>
 
