@@ -1,23 +1,36 @@
-function mostrarHorario() {
 
-    const horarios = document.getElementById("horarios");
-    const botao = document.getElementById("btnHorario");
+function abrirHorarios() {
+    const container = document.querySelector(".container");
+    const phone = document.querySelector(".phone");
 
-    if (horarios.style.maxHeight) {
+    container.classList.add("horarios-abertos");
+    phone.classList.add("horarios-abertos");
 
-        horarios.style.maxHeight = null;
-        horarios.style.padding = "0 15px";
-        botao.innerHTML = "Ver horários da semana";
-
-    } else {
-
-        horarios.style.maxHeight = "260px";
-        horarios.style.padding = "12px 15px";
-        botao.innerHTML = "Ocultar horários";
-
-    }
-
+    container.scrollTop = 0;
 }
+
+function fecharHorarios() {
+    const container = document.querySelector(".container");
+    const phone = document.querySelector(".phone");
+
+    container.classList.remove("horarios-abertos");
+    phone.classList.remove("horarios-abertos");
+
+    container.scrollTop = 0;
+}
+
+const voltarTopo = document.querySelector(".voltarTopo");
+
+voltarTopo.addEventListener("click", function () {
+    const container = document.querySelector(".container");
+
+    if (container.classList.contains("horarios-abertos")) {
+        fecharHorarios();
+    } else {
+        alert("Voltando para a lista de produtos.");
+    }
+});
+
 
 const favorito = document.getElementById("favorito");
 
